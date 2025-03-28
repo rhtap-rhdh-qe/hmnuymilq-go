@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hmnuymilq-go-gitops
+  description: This is GitOps manifest for hmnuymilq-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hmnuymilq-go
+    backstage.io/kubernetes-id: hmnuymilq-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hmnuymilq-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hmnuymilq-go
